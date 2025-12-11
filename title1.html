@@ -14,38 +14,28 @@
     font-family: sans-serif;
   }
 
-  /* ----- RESPONSIVE 800PX SLIDER ----- */
+  /* ----- RESPONSIVE 800PX SLIDER, HEIGHT BASED ON IMAGE ----- */
   .title1-slider {
     position: relative;
     width: 100%;
-    max-width: 800px;
-    aspect-ratio: 4 / 3; /* frame stays 4:3 */
+    max-width: 800px;   /* cap at 800px */
     margin: 2rem auto 0 auto;
-    overflow: hidden;
-    padding: 0;
-    background: #000; /* optional if images leave empty space */
   }
 
   .title1-slide {
-    position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
-    height: 100%;
-    opacity: 0;
-    z-index: 0;
-    transition: opacity 0.5s ease;
-
-    /* 👇 NEW FIX: Don't crop images */
-    object-fit: contain;   /* keeps full image visible */
-    background-color: #000; /* fills letterbox area */
-    
-    display: block;
+    height: auto;       /* let image define height */
+    display: none;      /* hide all by default */
   }
 
   .title1-slide.active {
-    opacity: 1;
-    z-index: 1;
+    display: block;     /* only active slide shows */
+  }
+
+  .title1-slide img {
+    width: 100%;
+    height: auto;
+    display: block;
   }
 
   .title1-nav {
@@ -79,25 +69,58 @@
   <button class="title1-nav title1-next">&#10095;</button>
 
   <!-- START IMAGES -->
-  <img class="title1-slide active" src="https://raw.githubusercontent.com/aazablue-ctrl/titleimages/main/a0672608dc281fc8b6e6b1130a9087ecfe1df84c-1.jpeg" />
-  <img class="title1-slide" src="https://raw.githubusercontent.com/aazablue-ctrl/titleimages/main/a0672608dc281fc8b6e6b1130a9087ecfe1df84c-2.jpeg" />
-  <img class="title1-slide" src="https://raw.githubusercontent.com/aazablue-ctrl/titleimages/main/a0672608dc281fc8b6e6b1130a9087ecfe1df84c-3.jpeg" />
-  <img class="title1-slide" src="https://raw.githubusercontent.com/aazablue-ctrl/titleimages/main/a0672608dc281fc8b6e6b1130a9087ecfe1df84c-4.jpeg" />
-  <img class="title1-slide" src="https://raw.githubusercontent.com/aazablue-ctrl/titleimages/main/a0672608dc281fc8b6e6b1130a9087ecfe1df84c-5.jpeg" />
-  <img class="title1-slide" src="https://raw.githubusercontent.com/aazablue-ctrl/titleimages/main/a0672608dc281fc8b6e6b1130a9087ecfe1df84c-7.jpeg" />
-  <img class="title1-slide" src="https://raw.githubusercontent.com/aazablue-ctrl/titleimages/main/a0672608dc281fc8b6e6b1130a9087ecfe1df84c-8.jpeg" />
-  <img class="title1-slide" src="https://raw.githubusercontent.com/aazablue-ctrl/titleimages/main/a0672608dc281fc8b6e6b1130a9087ecfe1df84c-9.jpeg" />
+  <div class="title1-slide active">
+    <img src="https://raw.githubusercontent.com/aazablue-ctrl/titleimages/main/a0672608dc281fc8b6e6b1130a9087ecfe1df84c-1.jpeg" />
+  </div>
+  <div class="title1-slide">
+    <img src="https://raw.githubusercontent.com/aazablue-ctrl/titleimages/main/a0672608dc281fc8b6e6b1130a9087ecfe1df84c-2.jpeg" />
+  </div>
+  <div class="title1-slide">
+    <img src="https://raw.githubusercontent.com/aazablue-ctrl/titleimages/main/a0672608dc281fc8b6e6b1130a9087ecfe1df84c-3.jpeg" />
+  </div>
+  <div class="title1-slide">
+    <img src="https://raw.githubusercontent.com/aazablue-ctrl/titleimages/main/a0672608dc281fc8b6e6b1130a9087ecfe1df84c-4.jpeg" />
+  </div>
+  <div class="title1-slide">
+    <img src="https://raw.githubusercontent.com/aazablue-ctrl/titleimages/main/a0672608dc281fc8b6e6b1130a9087ecfe1df84c-5.jpeg" />
+  </div>
+  <div class="title1-slide">
+    <img src="https://raw.githubusercontent.com/aazablue-ctrl/titleimages/main/a0672608dc281fc8b6e6b1130a9087ecfe1df84c-7.jpeg" />
+  </div>
+  <div class="title1-slide">
+    <img src="https://raw.githubusercontent.com/aazablue-ctrl/titleimages/main/a0672608dc281fc8b6e6b1130a9087ecfe1df84c-8.jpeg" />
+  </div>
+  <div class="title1-slide">
+    <img src="https://raw.githubusercontent.com/aazablue-ctrl/titleimages/main/a0672608dc281fc8b6e6b1130a9087ecfe1df84c-9.jpeg" />
+  </div>
 
-  <img class="title1-slide" src="https://raw.githubusercontent.com/aazablue-ctrl/titleimages/main/b66d08b4bf93a36ae23c659184c9f2a6c313b283-10.jpeg" />
-  <img class="title1-slide" src="https://raw.githubusercontent.com/aazablue-ctrl/titleimages/main/b66d08b4bf93a36ae23c659184c9f2a6c313b283-2.jpeg" />
-  <img class="title1-slide" src="https://raw.githubusercontent.com/aazablue-ctrl/titleimages/main/b66d08b4bf93a36ae23c659184c9f2a6c313b283-3.jpeg" />
-  <img class="title1-slide" src="https://raw.githubusercontent.com/aazablue-ctrl/titleimages/main/b66d08b4bf93a36ae23c659184c9f2a6c313b283-4.jpeg" />
-  <img class="title1-slide" src="https://raw.githubusercontent.com/aazablue-ctrl/titleimages/main/b66d08b4bf93a36ae23c659184c9f2a6c313b283-5.jpeg" />
-  <img class="title1-slide" src="https://raw.githubusercontent.com/aazablue-ctrl/titleimages/main/b66d08b4bf93a36ae23c659184c9f2a6c313b283-6.jpeg" />
-  <img class="title1-slide" src="https://raw.githubusercontent.com/aazablue-ctrl/titleimages/main/b66d08b4bf93a36ae23c659184c9f2a6c313b283-7.jpeg" />
-  <img class="title1-slide" src="https://raw.githubusercontent.com/aazablue-ctrl/titleimages/main/b66d08b4bf93a36ae23c659184c9f2a6c313b283-8.jpeg" />
-  <img class="title1-slide" src="https://raw.githubusercontent.com/aazablue-ctrl/titleimages/main/b66d08b4bf93a36ae23c659184c9f2a6c313b283-9.jpeg" />
-
+  <div class="title1-slide">
+    <img src="https://raw.githubusercontent.com/aazablue-ctrl/titleimages/main/b66d08b4bf93a36ae23c659184c9f2a6c313b283-10.jpeg" />
+  </div>
+  <div class="title1-slide">
+    <img src="https://raw.githubusercontent.com/aazablue-ctrl/titleimages/main/b66d08b4bf93a36ae23c659184c9f2a6c313b283-2.jpeg" />
+  </div>
+  <div class="title1-slide">
+    <img src="https://raw.githubusercontent.com/aazablue-ctrl/titleimages/main/b66d08b4bf93a36ae23c659184c9f2a6c313b283-3.jpeg" />
+  </div>
+  <div class="title1-slide">
+    <img src="https://raw.githubusercontent.com/aazablue-ctrl/titleimages/main/b66d08b4bf93a36ae23c659184c9f2a6c313b283-4.jpeg" />
+  </div>
+  <div class="title1-slide">
+    <img src="https://raw.githubusercontent.com/aazablue-ctrl/titleimages/main/b66d08b4bf93a36ae23c659184c9f2a6c313b283-5.jpeg" />
+  </div>
+  <div class="title1-slide">
+    <img src="https://raw.githubusercontent.com/aazablue-ctrl/titleimages/main/b66d08b4bf93a36ae23c659184c9f2a6c313b283-6.jpeg" />
+  </div>
+  <div class="title1-slide">
+    <img src="https://raw.githubusercontent.com/aazablue-ctrl/titleimages/main/b66d08b4bf93a36ae23c659184c9f2a6c313b283-7.jpeg" />
+  </div>
+  <div class="title1-slide">
+    <img src="https://raw.githubusercontent.com/aazablue-ctrl/titleimages/main/b66d08b4bf93a36ae23c659184c9f2a6c313b283-8.jpeg" />
+  </div>
+  <div class="title1-slide">
+    <img src="https://raw.githubusercontent.com/aazablue-ctrl/titleimages/main/b66d08b4bf93a36ae23c659184c9f2a6c313b283-9.jpeg" />
+  </div>
 </div>
 
 <script>
